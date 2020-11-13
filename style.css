@@ -1,0 +1,284 @@
+/* Typography imported from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Brand Colours & Typography */
+:root {
+  --body-typeface: "Poppins", serif;
+  --background-colour: #d7dac7;
+  --body-colour: #eb5426;
+  --headline-typeface: "Maragsa-Display";
+  --headline-colour: #FFFFFF;
+  --hyperlink-colour: #eb5426;
+  --hover-colour: #eb5426;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--body-typeface);
+  background: var(--background-colour);
+  color: var(--body-colour);
+
+}
+
+/* Typography */
+@font-face {
+  font-family: Maragsa-Display;
+  src: url(fonts/Maragsa-Display.otf);
+}
+
+
+h1 {
+  font-size: 1rem;
+  font-family: var(--headline-typeface);
+  color: var(--headline-colour);
+  margin-bottom: .25em;
+}
+
+.intro,
+.outro {
+  width: 90vw;
+  line-height: 1;
+  font-family: Maragsa-Display;
+  font-size: 4em;
+  letter-spacing: 0em
+}
+
+.outro {
+  font-size: 2em;
+  width: 90vw;
+  margin-top: 2em;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.3;
+  margin-bottom: 1em;
+}
+
+
+a {
+  text-decoration: none;
+  color: var(--hyperlink-colour);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--hover-colour);
+}
+
+
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  /* Removes gap below images */
+}
+
+/* Layout */
+
+header,
+footer {
+  padding: 2em;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 15vh;
+}
+
+.logo {
+  width: 100px;
+  height: 64px;
+}
+
+.about-headline {
+  min-height: 95vh;
+}
+
+.portfolio,
+.project-grid,
+.about-page {
+  flex: 1;
+}
+
+.portfolio {
+  padding: rem;
+}
+
+/* Overlay */
+
+.project-description-overlay {
+  display: none;
+}
+
+.project-item:hover .project-description-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hero Section */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 50vh;
+  text-align: center
+}
+
+/* Work Grid */
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: rem;
+  /* Magical, media-query-less responsiveness is achieved using the repeat() function and the auto placement keywords. To achieve wrapping, we can use the auto-fit. If you're using auto-fit, the content will stretch to fill the entire row width.  Specify a minimum width for the columns, using the minmax() function. The 1fr is what tells the browser to distribute the space between the columns so that each column equally gets one fraction of that space.  */
+}
+
+.social-footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /*  background: var(--hyperlink-colour);*/
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  min-height: 5vh;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.copyright-footer {
+  text-align: center;
+}
+
+.social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  min-height: 10vh;
+  padding: 1em;
+}
+
+.social a {
+  color: white;
+}
+
+/* Project Page */
+
+.sidebar {
+  width: 100vw;
+  padding: 1em 2em;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.project-grid {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  grid-template-rows: repeat(10, auto);
+  flex: 1;
+}
+
+.project-item {
+  position: relative;
+  display: inline-block;
+}
+
+.project-description {
+  padding: 1em 2em;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Large Screen Grid Layout */
+@media (min-width: 768px) {
+
+
+  h1 {
+    font-size: 3em;
+  }
+
+  .hero {
+    min-height: 90vh;
+  }
+
+  .project {
+    flex-direction: row;
+  }
+
+  .project-grid {
+    width: 75vw;
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+    grid-gap: rem;
+  }
+
+  .sidebar {
+    width: 25vw;
+    height: 100vh;
+    position: sticky;
+    top: 15vh;
+    left: 0;
+  }
+
+  .intro,
+  .outro {
+    width: 60vw;
+    line-height: 1;
+    font-family: Maragsa-Display;
+    font-size: 6em;
+    letter-spacing: 0em
+  }
+
+  .outro {
+    font-size: 4em;
+    width: 60vw;
+  }
+}
+
+
+
+@media (min-width: 768px) {}
