@@ -154,12 +154,12 @@ header {
   text-align: center
 }
 
-/* Work Grid */
+/* Mobile Work Grid */
 
 .work-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-gap: rem;
+  grid-gap: 0;
   /* Magical, media-query-less responsiveness is achieved using the repeat() function and the auto placement keywords. To achieve wrapping, we can use the auto-fit. If you're using auto-fit, the content will stretch to fill the entire row width.  Specify a minimum width for the columns, using the minmax() function. The 1fr is what tells the browser to distribute the space between the columns so that each column equally gets one fraction of that space.  */
 }
 
@@ -250,10 +250,11 @@ header {
     width: 75vw;
   }
 
+  /* Desktop Work Grid */
   .work-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
-    grid-gap: rem;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    grid-gap: 0;
   }
 
   .sidebar {
