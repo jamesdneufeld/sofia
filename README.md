@@ -1,2 +1,2 @@
 # sofia
- Creative CSS grid based portfolio template
+ css grid portfolio
